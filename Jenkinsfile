@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('拉取代码') {
             steps {
-                git url: 'https://github.com/yq996/jkzdh_pingtai.git', branch: 'main',credentialId:'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'
+                git url: 'https://github.com/yq996/jkzdh_pingtai.git', branch: 'main',CredentialId:'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'
             }
         }
         
