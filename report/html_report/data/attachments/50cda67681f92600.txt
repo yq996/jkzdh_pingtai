@@ -1,0 +1,7 @@
+INFO     root:test_runner.py:34 0.用例ID:5 模块:首页-告警 场景:告警信息-已读信息上报 标题:告警信息-已读信息上报
+INFO     root:analyse_case.py:25 1.解析请求数据, 请求数据为: {'method': 'post', 'url': 'https://192.168.102.71:5443//rest/system/alarminfo/read', 'headers': {'content-type': 'application/json', 'Jytoken': 'MTYzMTYzNzgyOTk1MzUxNw=='}, 'params': None, 'data': None, 'json': {'id_arr': ['3311', '3310', '3309', '3308', '3307', '3306', '3305', '3304', '3303', '3302', '3301', '3300', '3299', '3298', '3297']}, 'files': None}
+INFO     root:send_request.py:22 响应头为：{'Server': 'nginx', 'Date': 'Wed, 06 Aug 2025 02:38:55 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Expires': 'Thu, 19 Nov 1981 08:52:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Pragma': 'no-cache', 'Access-Control-Allow-Methods': 'GET, POST', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Jytoken', 'Access-Control-Allow-Credentials': 'true'}
+INFO     root:send_request.py:23 原始响应文本为: {"code":200,"msg":"操作成功","data":[]}
+INFO     root:send_request.py:24 解密后的响应内容为: {"code":200,"msg":"操作成功","data":[]}
+INFO     root:send_request.py:28 解密后响应JSON为: {'code': 200, 'msg': '操作成功', 'data': []}
+INFO     root:asserts.py:38 实际结果(200) 等于期望值 200

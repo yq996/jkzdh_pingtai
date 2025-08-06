@@ -1,0 +1,1 @@
+{'method': 'post', 'url': 'https://192.168.102.71:5443//rest/dispatch/device/list', 'headers': {'content-type': 'application/json', 'Jytoken': 'MTYzMTYzNzgyOTk1MzUxNw=='}, 'params': None, 'data': None, 'json': {'gb_proto_version': '0'}, 'files': None}

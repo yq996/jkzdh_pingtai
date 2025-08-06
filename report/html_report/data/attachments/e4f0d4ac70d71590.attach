@@ -1,0 +1,1 @@
+{'method': 'post', 'url': 'https://192.168.102.71:5443//rest/system/announce/get', 'headers': {'content-type': 'application/json', 'Jytoken': 'MTYzMTYzNzgyOTk1MzUxNw=='}, 'params': None, 'data': None, 'json': {'title': '', 'status': '', 'pssj_type': '', 'pssj_start': '', 'pssj_end': '', 'page_size': 20, 'cur_page': 1}, 'files': None}

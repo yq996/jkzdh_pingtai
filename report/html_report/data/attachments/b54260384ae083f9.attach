@@ -1,0 +1,1 @@
+{'method': 'post', 'url': 'https://192.168.102.71:5443//rest/system/alarminfo/read', 'headers': {'content-type': 'application/json', 'Jytoken': 'MTYzMTYzNzgyOTk1MzUxNw=='}, 'params': None, 'data': None, 'json': {'id_arr': ['3311', '3310', '3309', '3308', '3307', '3306', '3305', '3304', '3303', '3302', '3301', '3300', '3299', '3298', '3297']}, 'files': None}

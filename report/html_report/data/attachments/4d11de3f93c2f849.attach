@@ -1,0 +1,1 @@
+{'method': 'get', 'url': 'https://192.168.102.71:5443//rest/index/login/logout', 'headers': {'Jytoken': 'MTYzMTYzNzgyOTk1MzUxNw=='}, 'params': None, 'data': None, 'json': None, 'files': None}

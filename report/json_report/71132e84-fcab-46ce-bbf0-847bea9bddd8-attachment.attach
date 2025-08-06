@@ -1,0 +1,1 @@
+{'method': 'post', 'url': 'https://192.168.102.71:5443//rest/dispatch/video/list', 'headers': {'content-type': 'application/json', 'Jytoken': 'MTYzMTYzNzgyOTk1MzUxNw=='}, 'params': None, 'data': None, 'json': {'danweis': [34021002], 'startdate': '2025-06-28 15:21:43', 'enddate': '2025-07-28 15:21:43'}, 'files': None}

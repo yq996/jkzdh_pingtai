@@ -1,0 +1,1 @@
+{'method': 'post', 'url': 'https://192.168.102.71:5443//rest/index/login/login', 'headers': {'content-type': 'application/json'}, 'params': None, 'data': None, 'json': {'login_info': 'JTdCJTIydXNlcm5hbWUlMjIlM0ElMjAlMjJqeWFkbWluJTIyJTJDJTIwJTIycGFzc3dvcmQlMjIlM0ElMjAlMjJiMzVmMTc1MThkYzJhYmQxM2M3NTcyMjE0YjUwMTAyNSUyMiU3RA=='}, 'files': None}

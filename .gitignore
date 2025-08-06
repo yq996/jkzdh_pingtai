@@ -1,0 +1,11 @@
+.idea
+
+#python字节码缓存
+_pycache_
+
+#python测试缓存
+.pytest_cache
+
+#python通用规则
+*.py[cod]
+*$py.class
