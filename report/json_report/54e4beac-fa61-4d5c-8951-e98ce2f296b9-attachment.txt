@@ -1,7 +1,0 @@
-INFO     root:test_runner.py:34 0.用例ID:7 模块:搜索 场景:搜索 标题:搜索
-INFO     root:analyse_case.py:25 1.解析请求数据, 请求数据为: {'method': 'post', 'url': 'https://192.168.102.71:5443//rest/dispatch/video/list', 'headers': {'content-type': 'application/json', 'Jytoken': 'MTYzMTYzNzgyOTk1MzUxNw=='}, 'params': None, 'data': None, 'json': {'danweis': [34021002], 'startdate': '2025-06-28 15:21:43', 'enddate': '2025-07-28 15:21:43'}, 'files': None}
-INFO     root:send_request.py:22 响应头为：{'Server': 'nginx', 'Date': 'Wed, 06 Aug 2025 02:38:56 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Expires': 'Thu, 19 Nov 1981 08:52:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Pragma': 'no-cache', 'Access-Control-Allow-Methods': 'GET, POST', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Jytoken', 'Access-Control-Allow-Credentials': 'true'}
-INFO     root:send_request.py:23 原始响应文本为: {"code":200,"msg":"操作成功","data":{"list":[],"page":1,"pagesize":15,"total":"0"}}
-INFO     root:send_request.py:24 解密后的响应内容为: {"code":200,"msg":"操作成功","data":{"list":[],"page":1,"pagesize":15,"total":"0"}}
-INFO     root:send_request.py:28 解密后响应JSON为: {'code': 200, 'msg': '操作成功', 'data': {'list': [], 'page': 1, 'pagesize': 15, 'total': '0'}}
-INFO     root:asserts.py:38 实际结果(200) 等于期望值 200

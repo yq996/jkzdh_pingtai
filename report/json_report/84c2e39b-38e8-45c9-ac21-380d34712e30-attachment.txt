@@ -1,0 +1,9 @@
+[32mINFO    [0m root:test_runner.py:34 0.用例ID:1 模块:登录 场景:获取token 标题:获取token成功
+[32mINFO    [0m root:analyse_case.py:25 1.解析请求数据, 请求数据为: {'method': 'post', 'url': 'https://192.168.102.71:5443//rest/index/login/login', 'headers': {'content-type': 'application/json'}, 'params': None, 'data': None, 'json': {'login_info': 'JTdCJTIydXNlcm5hbWUlMjIlM0ElMjAlMjJqeWFkbWluJTIyJTJDJTIwJTIycGFzc3dvcmQlMjIlM0ElMjAlMjJiMzVmMTc1MThkYzJhYmQxM2M3NTcyMjE0YjUwMTAyNSUyMiU3RA=='}, 'files': None}
+[32mINFO    [0m root:send_request.py:22 响应头为：{'Server': 'nginx', 'Date': 'Wed, 06 Aug 2025 06:12:53 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Expires': 'Thu, 19 Nov 1981 08:52:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Pragma': 'no-cache', 'Set-Jytoken': 'MTM0OTkyMDg2NDY1NTkyNg==', 'Access-Control-Allow-Methods': 'GET, POST', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Jytoken', 'Access-Control-Allow-Credentials': 'true'}
+[32mINFO    [0m root:send_request.py:23 原始响应文本为: {"code":200,"msg":"success","data":[]}
+[32mINFO    [0m root:send_request.py:24 解密后的响应内容为: {"code":200,"msg":"success","data":[]}
+[32mINFO    [0m root:send_request.py:28 解密后响应JSON为: {'code': 200, 'msg': 'success', 'data': []}
+[32mINFO    [0m root:asserts.py:38 实际结果(200) 等于期望值 200
+[32mINFO    [0m root:extractor.py:31 4.JSON提取, 根据{"msg":"$..msg"}提取数据, 此时全局变量为: {'msg': 'success'}
+[32mINFO    [0m root:extractor.py:40 4.headers提取, 根据{"token":"Set-Jytoken"}提取数据, 此时全局变量为: {'msg': 'success', 'token': 'MTM0OTkyMDg2NDY1NTkyNg=='}

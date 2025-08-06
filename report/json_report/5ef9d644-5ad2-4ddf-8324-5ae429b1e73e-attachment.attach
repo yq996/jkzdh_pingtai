@@ -1,0 +1,1 @@
+{'method': 'post', 'url': 'https://192.168.102.71:5443//rest/system/alarminfo/get', 'headers': {'content-type': 'application/json', 'Jytoken': 'MTM0OTkyMDg2NDY1NTkyNg=='}, 'params': None, 'data': None, 'json': None, 'files': None}
