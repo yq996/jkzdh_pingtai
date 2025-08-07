@@ -43,17 +43,18 @@ pipeline {
         }
 
         success {
-            emailext(
-             mail to: "yanq0405@163.com" ,
-             subject: "Jenkins Job Failed: ${env.JOB_NAME}",
-             body: "Job ${env.JOB_NAME} (#${env.BUILD_NUMBER}) failed.\nCheck it at ${env.BUILD_URL}"
+            mail(
+                to: 'yanq0405@163.com',
+                subject: '构建成功',
+                body: "恭喜，构建成功！"
             )
         }
-
         failure {
-           mail to: "yanq0405@163.com" ,
-             subject: "Jenkins Job Failed: ${env.JOB_NAME}",
-             body: "Job ${env.JOB_NAME} (#${env.BUILD_NUMBER}) failed.\nCheck it at ${env.BUILD_URL}"
+            mail(
+                to: 'yanq0405@163.com',
+                subject: '构建失败',
+                body: "请注意，构建失败，请及时查看日志。"
+            )
         }
     }
    
