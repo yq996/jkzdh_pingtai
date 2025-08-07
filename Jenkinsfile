@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    
+    tools{
+		allure'Allure-2.24.1'
+    }
     stages {
         stage('拉取代码') {
             steps {
@@ -25,5 +27,10 @@ pipeline {
                 '''
             }
         }
+	post{
+	always{
+		results:[[path:'report/json_report']]
+		}
+		}
     }
 }
