@@ -36,17 +36,19 @@ pipeline {
 
         success {
             emailext(
-                // subject: "✅ Jenkins 构建成功：${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                // body: "构建成功，查看详情：${env.BUILD_URL}",
-                to: "yanq0405@163.com"
+                subject: "✅ Jenkins 构建成功：${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "构建成功，查看详情：${env.BUILD_URL}",
+                to: "yanq0405@163.com",
+                from: "yanq0405@163.com"  // 必须和全局配置的SMTP用户名一致
             )
         }
 
         failure {
             emailext(
-                // subject: "❌ Jenkins 构建失败：${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                // body: "失败详情见：${env.BUILD_URL}",
-                to: "yanq0405@163.com"
+                subject: "❌ Jenkins 构建失败：${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "失败详情见：${env.BUILD_URL}",
+                to: "yanq0405@163.com",
+                from: "yanq0405@163.com"  // 必须和全局配置的SMTP用户名一致
             )
         }
     }
