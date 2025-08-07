@@ -27,10 +27,12 @@ pipeline {
                 '''
             }
         }
-	post{
-	always{
-		results:[[path:'report/json_report']]
-		}
-		}
+	
     }
+    post{
+        always{
+            results:[[path:'report/json_report']]
+        }
+    }
+   
 }
