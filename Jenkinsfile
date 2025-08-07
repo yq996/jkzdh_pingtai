@@ -29,6 +29,13 @@ pipeline {
         }
 	
     }
+    stage('Test Network') {
+            steps {
+                sh 'ping -c 4 smtp.163.com'
+                sh 'nslookup smtp.163.com'
+                sh 'curl -v smtps://smtp.163.com:465' // 可能失败，但能验证 SSL/TCP 建链
+            }
+        }
     post{
         always{
             allure results:[[path:'report/json_report']]
