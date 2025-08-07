@@ -31,7 +31,7 @@ pipeline {
     }
     post{
         always{
-            results:[[path:'report/json_report']]
+            allure results:[[path:'report/json_report']]
         }
     }
    
