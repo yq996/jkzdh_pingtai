@@ -39,15 +39,15 @@ pipeline {
         success {
             mail(
                 to: 'yanq0405@163.com',
-                subject: '构建成功',
-                body: "恭喜，构建成功！"
+                subject: "✅ 构建成功：${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "点击这里查看构建详情：${env.BUILD_URL}",
             )
         }
         failure {
             mail(
                 to: 'yanq0405@163.com',
-                subject: '构建失败',
-                body: "请注意，构建失败，请及时查看日志。"
+               subject: "✅ 构建失败：${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "点击这里查看构建详情：${env.BUILD_URL}",
             )
         }
     }
