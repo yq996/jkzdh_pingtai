@@ -33,6 +33,22 @@ pipeline {
         always{
             allure results:[[path:'report/json_report']]
         }
+
+        success {
+            emailext(
+                subject: "✅ Jenkins 构建成功：${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "构建成功，查看详情：${env.BUILD_URL}",
+                to: "your_email@example.com"
+            )
+        }
+        
+        failure {
+            emailext(
+                subject: "❌ Jenkins 构建失败：${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "失败详情见：${env.BUILD_URL}",
+                to: "your_email@example.com"
+            )
+        }
     }
    
 }
