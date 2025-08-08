@@ -18,7 +18,7 @@ pipeline {
         stage('创建虚拟环境') {
             steps {
                 sh '''
-                    # 确保系统有 Python3，没有的话需先装（如 apt install python3 ）
+                    # 确保系统有 Python3 和 venv 模块
                     python3 -m venv venv
                 '''
             }
@@ -27,8 +27,8 @@ pipeline {
         stage('安装依赖') {
             steps {
                 sh '''
-                    # 激活虚拟环境并安装依赖（不同系统激活方式有差异，这里用通用的 source ）
-                    source venv/bin/activate && \
+                    # 使用 POSIX 兼容的点命令激活虚拟环境，适配所有 Shell
+                    . venv/bin/activate && \
                     pip install --upgrade pip && \
                     pip install -r requirements.txt && \
                     deactivate
@@ -39,8 +39,9 @@ pipeline {
         stage('运行测试') {
             steps {
                 sh '''
-                    source venv/bin/activate && \
-                    # 替换为实际测试命令，比如 pytest 、或者你项目里的启动命令
+                    # 同样使用点命令激活虚拟环境
+                    . venv/bin/activate && \
+                    # 替换为实际测试命令（例如 pytest 或项目启动命令）
                     python run.py && \
                     deactivate
                 '''
