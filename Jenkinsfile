@@ -1,55 +1,71 @@
 pipeline {
     agent any
-    tools{
-		allure'Allure-2.24.1'
+    tools {
+        // 关联 Jenkins 中配置的 Allure 工具（名称要和系统配置里一致）
+        allure 'Allure-2.24.1' 
     }
     stages {
         stage('拉取代码') {
             steps {
-                git url: 'https://github.com/yq996/jkzdh_pingtai.git', branch: 'main',credentialsId:'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'
+                git(
+                    url: 'https://github.com/yq996/jkzdh_pingtai.git', 
+                    branch: 'main', 
+                    credentialsId: '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'
+                )
             }
         }
-        
+
+        stage('创建虚拟环境') {
+            steps {
+                sh '''
+                    # 确保系统有 Python3，没有的话需先装（如 apt install python3 ）
+                    python3 -m venv venv
+                '''
+            }
+        }
+
         stage('安装依赖') {
             steps {
                 sh '''
-                    # 直接使用虚拟环境中的pip安装依赖
-                    /var/jenkins_home/workspace/jkzdh_pingtai/venv/bin/pip install -r requirements.txt
+                    # 激活虚拟环境并安装依赖（不同系统激活方式有差异，这里用通用的 source ）
+                    source venv/bin/activate && \
+                    pip install --upgrade pip && \
+                    pip install -r requirements.txt && \
+                    deactivate
                 '''
             }
         }
-        
+
         stage('运行测试') {
             steps {
                 sh '''
-                    # 替换为你的实际测试命令，例如：
-                    /var/jenkins_home/workspace/jkzdh_pingtai/venv/bin/python run.py
+                    source venv/bin/activate && \
+                    # 替换为实际测试命令，比如 pytest 、或者你项目里的启动命令
+                    python run.py && \
+                    deactivate
                 '''
             }
         }
-     
-	
     }
- 
-    post{
-        always{
-            allure results:[[path:'report/json_report']]
-        }
 
+    post {
+        always {
+            // 指定 Allure 结果路径（根据实际测试生成的结果目录调整）
+            allure results: [[path: 'allure-results']] 
+        }
         success {
             mail(
-                to: 'yanq0405@163.comyanq@pwithe.com',
+                to: 'yanq0405@163.com,yanq@pwithe.com',
                 subject: "✅ 构建成功：${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "点击这里查看构建详情：${env.BUILD_URL}",
+                body: "点击查看详情：${env.BUILD_URL}"
             )
         }
         failure {
             mail(
-                to: 'yanq0405@163.comyanq@pwithe.com',
-               subject: "✅ 构建失败：${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "点击这里查看构建详情：${env.BUILD_URL}",
+                to: 'yanq0405@163.com,yanq@pwithe.com',
+                subject: "❌ 构建失败：${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "点击查看详情：${env.BUILD_URL}"
             )
         }
     }
-   
 }
