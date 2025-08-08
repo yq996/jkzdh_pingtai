@@ -52,7 +52,7 @@ pipeline {
     post {
         always {
             // 指定 Allure 结果路径（根据实际测试生成的结果目录调整）
-            allure results: [[path: 'allure-results']] 
+            allure results: [[path: 'report/json_report']] 
         }
         success {
             mail(
