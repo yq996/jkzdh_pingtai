@@ -38,14 +38,14 @@ pipeline {
 
         success {
             mail(
-                to: 'yanq0405@163.com',
+                to: 'yanq0405@163.com',"liaoy@pwithe.com","yanq@pwithe.com",
                 subject: "✅ 构建成功：${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "点击这里查看构建详情：${env.BUILD_URL}",
             )
         }
         failure {
             mail(
-                to: 'yanq0405@163.com',
+                to: 'yanq0405@163.com',"liaoy@pwithe.com","yanq@pwithe.com",
                subject: "✅ 构建失败：${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "点击这里查看构建详情：${env.BUILD_URL}",
             )
