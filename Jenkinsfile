@@ -10,7 +10,7 @@ pipeline {
                 git(
                     url: 'https://github.com/yq996/jkzdh_pingtai.git', 
                     branch: 'main', 
-                    credentialsId: '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'
+                    credentialsId: 'af4e933e-f1f4-4bab-b7e9-fbef5e60e531'
                 )
             }
         }
